@@ -1,8 +1,11 @@
 import React from "react";
+import './TodoSearch.css';
 
 function TodoSearch () {
     return (
-        <input placeholder="🔎 Busca una tarea aquí"/>
+        <div className="input-container">
+            <input placeholder="🔎 Busca una tarea aquí"/>
+        </div>
     );
 }
 

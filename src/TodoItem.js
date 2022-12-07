@@ -1,13 +1,16 @@
 import React from "react";
+import './TodoItem.css';
 
 function TodoItem (props) {
     return (
         <li>
-            <span>👍</span>
+            <div className="check-container">
+                <span className="check">👍</span>
 
-            <p>{props.text}</p>
+                <p>{props.text}</p>
+            </div>
 
-            <span>👎</span>
+            <span className="delete">✖️</span>
         </li>
     );
 }

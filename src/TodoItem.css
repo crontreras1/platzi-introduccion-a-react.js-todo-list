@@ -1,0 +1,18 @@
+li {
+    margin: 15px;
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-bottom: 1px solid #63598A;
+    border-right: 1px solid #63598A;
+}
+.check-container {
+    display: flex;
+    justify-content: flex-start;
+}
+.check {
+    margin: 10px;
+}
+.delete {
+    margin-left: 10px;
+}
