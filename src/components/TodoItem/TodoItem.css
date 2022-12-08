@@ -1,7 +1,7 @@
 li {
     margin: 15px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: white;
     border-bottom: 1px solid #63598A;
     border-right: 1px solid #63598A;
@@ -12,7 +12,17 @@ li {
 }
 .check {
     margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.todo-check-completed {
+    color: green;
+}
+.todo-text-completed {
+    text-decoration: line-through;
 }
 .delete {
-    margin-left: 10px;
+    margin: 0 10px;
+    cursor: pointer;
 }
