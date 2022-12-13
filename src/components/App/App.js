@@ -1,32 +1,31 @@
 import React from "react";
 import { TodoCounter } from "../TodoCounter/TodoCounter";
 import { TodoSearch } from "../TodoSearch/TodoSearch";
+import { TodoContext } from "../TodoContext/TodoContext";
 import { TodoList } from "../TodoList/TodoList";
 import { TodoItem } from "../TodoItem/TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton/CreateTodoButton";
 
-function App({
-    searchValue,
-    setSearchValue,
-    totalTodos,
-    completedTodos,
-    searchedTodos, 
+function App() {
+  const { 
+    error,
+    loading,
+    searchedTodos,
     completeTodo,
     deleteTodo
-  }) {
+  } = React.useContext (TodoContext);
+
   return (
     <React.Fragment>
-      <TodoSearch 
-         searchValue={ searchValue }
-         setSearchValue={ setSearchValue } 
-      />
+      <TodoSearch/>
 
-      <TodoCounter 
-        total={ totalTodos }
-        completed={ completedTodos }
-      />
+      <TodoCounter/>
 
       <TodoList>
+        {error && <p>Hubo un error</p>}
+        {loading && <p>Cargando...</p>}
+        {(!loading && !searchedTodos.length) && <p>Crea tu primera tarea</p>}
+
         {searchedTodos.map (todo => (
           <TodoItem 
           key={ todo.text } 
@@ -36,7 +35,7 @@ function App({
           statusDelete={ () => deleteTodo(todo.text) }
           />
         ))}  
-      </TodoList>
+      </TodoList>  
 
       <CreateTodoButton />
     </React.Fragment>
