@@ -1,15 +1,22 @@
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+}
 .TodoButton {
-    margin: 50px;
+    margin: 30px;
     background-color: #63598A;
     padding: 10px 60px;
     border: transparent;
     border-radius: 10px;
     font-family: 'Calistoga', cursive;
     letter-spacing: 1px;
+    /* z-index: 1; */
+    position: sticky;
+    bottom: 20px;
+    left: 10px;
 }
-
 .TodoButton:hover {
     background-color: rgb(106, 132, 209);
-    text-decoration: underline;
+    /* text-decoration: underline; */
     cursor: pointer;
 }

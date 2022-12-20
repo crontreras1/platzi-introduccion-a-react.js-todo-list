@@ -1,18 +1,20 @@
 import React from "react";
 import './CreateTodoButton.css'
 
-function CreateTodoButton () {
+function CreateTodoButton (props) {
     const agregarTareaBtn = () => {
-        alert ('agrega una nueva tarea :)')
+        props.setOpenModal (prevState => !prevState);
     }
 
     return (
-        <button 
-            className="TodoButton"
-            onClick={ agregarTareaBtn }
-        >
-            Agregar tarea
-        </button>
+        <div className="button-container">
+            <button 
+                className="TodoButton"
+                onClick={ agregarTareaBtn }
+            >
+                Agregar tarea
+            </button>
+        </div>
     );
 }
 

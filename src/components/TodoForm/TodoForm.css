@@ -1,0 +1,32 @@
+.form-container {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f4f5;
+    border-radius: 10px;
+}
+.label {
+    margin: 20px;
+    color: #1e1e1f;
+}
+.main-text {
+    width: 50%;
+    margin: 20px;
+    height: 50%;
+}
+.form-button {
+    border: transparent;
+    border-radius: 10px;
+    background-color: #63598a;
+    width: 170px;
+    height: 30px;
+    margin: 20px;
+    font-family: 'Calistoga', cursive;
+}
+.form-button:hover {
+    background-color: rgb(106, 132, 209);
+    /* text-decoration: underline; */
+    cursor: pointer;
+}

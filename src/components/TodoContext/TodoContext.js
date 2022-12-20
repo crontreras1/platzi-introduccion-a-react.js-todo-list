@@ -12,6 +12,7 @@ function TodoProvider (props) {
       } = useLocalStorage ('TODOS_V1', []);
       //Cambio de estado del TodoSearch.js
       const [  searchValue, setSearchValue ] = React.useState ('');
+      const [ openModal, setOpenModal] = React.useState (false);
     
       //Cambio de numero de tareas hechas y por hacer del TodoCounter.js
       const completedTodos = todos.filter (todo => !!todo.completed).length;
@@ -29,6 +30,16 @@ function TodoProvider (props) {
           const searchText = searchValue.toLowerCase ();
           return lowerCaseText.includes (searchText);
         });
+      }
+
+      //añadir todos
+      const addTodo = (text) => {
+        const newTodos = [...todos];
+        newTodos.push ({
+          completed: false,
+          text
+        });
+        saveTodos (newTodos);
       }
     
       //marcar todos como completados
@@ -55,7 +66,7 @@ function TodoProvider (props) {
         newTodos.splice (todoIndex, 1);
         //Actualizamos nuestro estado
         saveTodos (newTodos);
-      }
+      }      
 
     return (
         <TodoContext.Provider value={{
@@ -68,6 +79,9 @@ function TodoProvider (props) {
             searchedTodos,
             completeTodo,
             deleteTodo,
+            addTodo,
+            openModal,
+            setOpenModal
         }}>
             { props.children }
         </TodoContext.Provider>
